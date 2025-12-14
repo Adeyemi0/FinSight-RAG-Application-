@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSage Analytics - AI-Powered Financial Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#3B82F6"/>
+                    <path d="M2 17L12 22L22 17" stroke="#3B82F6" stroke-width="2"/>
+                </svg>
+                <div>
+                    <div class="logo-title">FinSage Analytics</div>
+                    <div class="logo-subtitle">AI-Powered Fundamental Analysis for S&P MidCap 400</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn" id="exportBtn" title="Export to PDF">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+            </button>
+            <button class="icon-btn" id="githubBtn" title="View Documentation">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+            </button>
+            <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" target="_blank" class="icon-btn user-btn" title="Connect on LinkedIn">
+                <div class="user-avatar">A</div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Panel - Query Input -->
+        <div class="left-panel">
+            <h2 class="panel-title">Financial Query</h2>
+            
+            <div class="query-box">
+                <textarea 
+                    id="queryInput" 
+                    placeholder="Ask about company financials..."
+                    rows="6"
+                ></textarea>
+                
+                <button id="submitBtn" class="submit-button">
+                    <span class="btn-text">Submit</span>
+                    <span class="loader" style="display: none;"></span>
+                </button>
+            </div>
+
+            <!-- Example Queries Section -->
+            <div class="examples-section">
+                <h3>Example Queries</h3>
+                <div class="example-queries-list">
+                    <div class="example-item" data-query="What is ACM's current ratio for 2023?">
+                        e.g., What is ACM's current ratio for 2023?
+                    </div>
+                    <div class="example-item" data-query="Compare ACM's debt-to-equity ratio over 8 years.">
+                        e.g., Compare ACM's debt-to-equity ratio over 8 years.
+                    </div>
+                    <div class="example-item" data-query="Show ACM's revenue growth trend.">
+                        e.g., Show ACM's revenue growth trend.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Queries History -->
+            <div class="recent-queries">
+                <h3>Recent queries history</h3>
+                <select id="historySelect" class="history-dropdown">
+                    <option value="">Select a recent query</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Right Panel - AI Answer -->
+        <div class="right-panel">
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <div class="loading-spinner"></div>
+                <span>Analyzing...</span>
+            </div>
+
+            <!-- Response Section -->
+            <div id="responseSection" style="display: none;">
+                <h2 class="panel-title">AI Answer</h2>
+                
+                <div id="answer" class="answer-content"></div>
+
+                <!-- Query Variations -->
+                <div id="expandedQueries" class="expanded-section" style="display: none;">
+                    <h3>Query Variations Used:</h3>
+                    <ul id="queriesList"></ul>
+                </div>
+
+                <!-- Sources Section -->
+                <div class="sources-section">
+                    <h3 class="sources-title">Sources</h3>
+                    <div id="sources" class="sources-list"></div>
+                </div>
+            </div>
+
+            <!-- Initial State -->
+            <div id="initialState" class="initial-state">
+                <div class="empty-state">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <p>Ask a question to get started</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="errorToast" class="error-toast" style="display: none;">
+        <span id="errorMessage"></span>
+    </div>
+
+    <!-- Include jsPDF library for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
