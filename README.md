@@ -8,6 +8,7 @@
 A Retrieval-Augmented Generation (RAG) application that answers questions about financial statements using AI. Built with LangChain, FastAPI, Zilliz vector database, and OpenAI GPT-4o, featuring advanced caching, conversation memory, and production-ready architecture.
 
 ![FinSight Demo](rag.gif)
+**Live Demo:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/adeyemi001/FinSight-RAG-Application)
 
 ## 📋 Table of Contents
 
