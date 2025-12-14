@@ -1,5 +1,4 @@
-# 💼 FinSight RAG - Production-Ready Financial Document Q&A System
-
+# 💼 FinSight RAG - AI-Powered Fundermental Analysis for S&P MidCap 400
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
 [![LangChain](https://img.shields.io/badge/LangChain-0.3.7-orange.svg)](https://www.langchain.com/)
