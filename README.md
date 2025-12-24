@@ -1,4 +1,5 @@
-# 💼 FinSight RAG - AI-Powered Fundermental Analysis for S&P MidCap 400
+# FinSight RAG - AI-Powered Fundamental Analysis for S&P MidCap 400
+
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
 [![LangChain](https://img.shields.io/badge/LangChain-0.3.7-orange.svg)](https://www.langchain.com/)
@@ -10,57 +11,56 @@ A Retrieval-Augmented Generation (RAG) application that answers questions about 
 ![FinSight Demo](rag.gif)
 **Live Demo:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/adeyemi001/FinSight-RAG-Application)
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Technology Stack](#-technology-stack)
-- [What I Built](#-what-i-built)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [What I Built](#what-i-built)
   - [Core RAG Pipeline](#1-core-rag-pipeline)
   - [Conversation Memory System](#2-conversation-memory-system)
   - [Multi-Layer Caching](#3-multi-layer-caching-system)
   - [Production Features](#4-production-features)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [API Documentation](#-api-documentation)
-- [Deployment](#-deployment)
-- [Performance & Cost Analysis](#-performance--cost-analysis)
-- [Advanced Features](#-advanced-features)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Deployment](#deployment)
+- [Advanced Features](#advanced-features)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-## 🌟 Features
+## Features
 
 ### Core Capabilities
-- 💬 **Conversational AI** - Multi-turn conversations with context memory
-- 🔍 **Hybrid Search** - Semantic similarity + metadata filtering for precise retrieval
-- ⚡ **Smart Caching** - Reduces API costs by 40-70% with intelligent cache invalidation
-- 📊 **Financial Analysis** - Calculates ratios, trends, and year-over-year comparisons
-- 📝 **Source Citations** - Every answer includes verifiable source references
-- 🎯 **Query Expansion** - Generates alternative phrasings for comprehensive results
-- 🔄 **MMR Reranking** - Balances relevance and diversity using Maximal Marginal Relevance
-- 📦 **Contextual Compression** - Extracts only relevant information from documents
+- **Conversational AI** - Multi-turn conversations with context memory
+- **Hybrid Search** - Semantic similarity + metadata filtering for precise retrieval
+- **Smart Caching** - Reduces API costs by 40-70% with intelligent cache invalidation
+- **Financial Analysis** - Calculates ratios, trends, and year-over-year comparisons
+- **Source Citations** - Every answer includes verifiable source references
+- **Query Expansion** - Generates alternative phrasings for comprehensive results
+- **MMR Reranking** - Balances relevance and diversity using Maximal Marginal Relevance
+- **Contextual Compression** - Extracts only relevant information from documents
 
 ### User Experience
-- 🎨 **Modern UI** - Responsive, intuitive interface with dark mode support
-- 📱 **Mobile Friendly** - Works seamlessly on all devices
-- 📄 **PDF Export** - Download analysis reports as PDF
-- 🕐 **Query History** - Track and reuse previous queries
-- ⚡ **Real-time Processing** - See query status and cache indicators
+- **Modern UI** - Responsive, intuitive interface with dark mode support
+- **Mobile Friendly** - Works seamlessly on all devices
+- **PDF Export** - Download analysis reports as PDF
+- **Query History** - Track and reuse previous queries
+- **Real-time Processing** - See query status and cache indicators
 
 ### Production Ready
-- 🚀 **FastAPI Backend** - High-performance async API
-- 🐳 **Docker Support** - Easy deployment with containers
-- ☁️ **Cloud Ready** - Deployable to Hugging Face Spaces
-- 📈 **Monitoring** - Cache statistics and performance metrics
-- 🔒 **Secure** - API key management and CORS configuration
-- ⚙️ **Configurable** - Extensive configuration options
+- **FastAPI Backend** - High-performance async API
+- **Docker Support** - Easy deployment with containers
+- **Cloud Ready** - Deployable to Hugging Face Spaces
+- **Monitoring** - Cache statistics and performance metrics
+- **Secure** - API key management and CORS configuration
+- **Configurable** - Extensive configuration options
 
-## 🏗 Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -122,7 +122,7 @@ A Retrieval-Augmented Generation (RAG) application that answers questions about 
 └──────────────────────────────────────────────────────────────────┘
 ```
 
-## 🛠 Technology Stack
+## Technology Stack
 
 ### Backend
 - **Framework**: FastAPI 0.115.0 - Modern, high-performance Python web framework
@@ -143,7 +143,7 @@ A Retrieval-Augmented Generation (RAG) application that answers questions about 
 - **Uvicorn** - ASGI server for FastAPI
 - **Pydantic** - Data validation and settings management
 
-## 💡 What I Built
+## What I Built
 
 ### 1. Core RAG Pipeline
 
@@ -297,7 +297,7 @@ Created RESTful API with:
 - `DELETE /cache/clear` - Manual cache clearing
 - `DELETE /session/{id}` - Session cleanup
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 finsight-rag/
@@ -343,7 +343,7 @@ finsight-rag/
 └── README.md                           # This file
 ```
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -413,7 +413,7 @@ docker run -p 7860:7860 \
   finsight-rag
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -464,7 +464,7 @@ EMBEDDING_CACHE_TTL=172800          # 48 hours (more caching)
 QUERY_CACHE_TTL=7200                # 2 hours (more caching)
 ```
 
-## 📖 Usage
+## Usage
 
 ### Web Interface
 
@@ -530,7 +530,7 @@ print(f"Sources: {len(result['sources'])}")
 print(f"From cache: {result.get('from_cache', False)}")
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### POST /query
 
@@ -615,7 +615,7 @@ Visit `http://localhost:8000/docs` for full Swagger UI documentation with:
 - Authentication details
 - Example requests
 
-## 🚢 Deployment
+## Deployment
 
 ### Hugging Face Spaces (Recommended)
 
@@ -654,53 +654,7 @@ See [HUGGINGFACE_DEPLOYMENT_GUIDE.md](docs/HUGGINGFACE_DEPLOYMENT_GUIDE.md) for 
 - **Azure**: Use Azure Container Instances
 - **Heroku**: Use container registry
 
-## 📊 Performance & Cost Analysis
-
-### Response Times
-
-| Query Type | Without Cache | With Cache | Improvement |
-|------------|---------------|------------|-------------|
-| Simple | 2-4s | <100ms | **95% faster** |
-| Complex | 5-10s | <100ms | **98% faster** |
-| With Expansion | 8-15s | <100ms | **99% faster** |
-
-### Cost Analysis
-
-**Without Caching**:
-- Embeddings (3 calls): $0.0003
-- LLM generation: $0.015
-- Query expansion: $0.002
-- Compression: $0.003
-- **Total**: ~$0.020 per query
-
-**With Caching (50% hit rate)**:
-- 50% cached: $0
-- 50% new: $0.01
-- **Average**: $0.01 per query
-- **Savings**: 50% ($30/month for 100 queries/day)
-
-**With Caching (70% hit rate)**:
-- **Average**: $0.006 per query
-- **Savings**: 70% ($42/month for 100 queries/day)
-
-### Monthly Cost Estimates
-
-| Queries/Day | Without Cache | 50% Cache Hit | 70% Cache Hit | Savings |
-|-------------|---------------|---------------|---------------|---------|
-| 50 | $30 | $15 | $9 | $21/mo |
-| 100 | $60 | $30 | $18 | $42/mo |
-| 500 | $300 | $150 | $90 | $210/mo |
-| 1000 | $600 | $300 | $180 | $420/mo |
-
-### Performance Optimizations
-
-1. **Caching** - Reduces 40-70% of API calls
-2. **Async Operations** - Parallel processing where possible
-3. **Connection Pooling** - Reuses database connections
-4. **Compression** - Reduces context size by 40-60%
-5. **Smart Reranking** - Processes only top candidates
-
-## 🎯 Advanced Features
+## Advanced Features
 
 ### Conversation Context
 
@@ -752,7 +706,7 @@ Sources:
 [Source 1] ACM_balance_sheet.md (Balance Sheet, Similarity: 94%)
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -804,7 +758,7 @@ curl http://localhost:8000/cache/stats
 curl http://localhost:8000/stats
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -822,11 +776,11 @@ Contributions are welcome! Please follow these steps:
 - Update documentation
 - Ensure all tests pass
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **LangChain** - Excellent RAG framework
 - **OpenAI** - Powerful language models
@@ -834,12 +788,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **FastAPI** - Modern Python web framework
 - **Hugging Face** - Easy deployment platform
 
-## 📞 Contact
+## Contact
 
 - **Author**: Adeyemi
 - **GitHub**: [@Adeyemi0](https://github.com/Adeyemi0)
 - **Project Link**: [https://github.com/Adeyemi0/FinSight-RAG-Application-](https://github.com/Adeyemi0/FinSight-RAG-Application-)
 
-## 🌟 Star History
+## Star History
 
-If you find this project helpful, please consider giving it a star ⭐
+If you find this project helpful, please consider giving it a star on GitHub.
